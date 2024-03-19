@@ -75,7 +75,6 @@ function displayCharacter(character) {
     characterList.appendChild(characterElement);
 }
 
-
 // Fonction principale pour initialiser l'application
 async function initializeApp() {
   const characters = await loadCharacters();
