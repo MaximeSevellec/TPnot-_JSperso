@@ -2,85 +2,88 @@
   "characters": [
     {
       "name": "Sung Jin-Woo",
-      "role": "protagonist",
+      "role": "protagoniste",
       "provenance": "Solo Leveling",
-      "description": "Sung Jin-Woo is the protagonist of the story. He is an E-rank hunter and is known as the weakest hunter in the world. He is a hardworking and determined person who is willing to do anything to protect his family.",
+      "origine": "Solo Leveling",
+      "description": "Sung Jin-Woo est le protagoniste de l'histoire. Il est un chasseur de rang E et est connu comme le chasseur le plus faible du monde. C'est une personne travailleuse et déterminée qui est prête à tout pour protéger sa famille.",
       "equipements": [
         {
-          "name": "Dagger",
-          "description": "A dagger that Sung Jin-Woo uses to fight monsters."
+          "nom": "Dague",
+          "description": "Une dague que Sung Jin-Woo utilise pour combattre les monstres."
         },
         {
-          "name": "Armor",
-          "description": "A set of armor that Sung Jin-Woo uses to protect himself from monsters."
+          "nom": "Armure",
+          "description": "Un ensemble d'armure que Sung Jin-Woo utilise pour se protéger des monstres."
         }
       ],
       "abilities": [
         {
-          "name": "Shadow Exchange",
-          "description": "Sung Jin-Woo can switch places with his shadow."
+          "nom": "Échange d'Ombre",
+          "description": "Sung Jin-Woo peut échanger de place avec son ombre."
         },
         {
-          "name": "Shadow Extraction",
-          "description": "Sung Jin-Woo can extract shadows from monsters and use them to fight."
+          "nom": "Extraction d'Ombre",
+          "description": "Sung Jin-Woo peut extraire des ombres des monstres et les utiliser pour se battre."
         }
       ],
       "image": "./static/img/sung_jin_woo_7220.png"
     },
     {
       "name": "Monkey D. Luffy",
-      "role": "protagonist",
+      "role": "protagoniste",
       "provenance": "One Piece",
-      "description": "Monkey D. Luffy is the captain of the Straw Hat Pirates and is known for his rubber-like abilities after eating the Gomu Gomu no Mi Devil Fruit. He dreams of finding the legendary One Piece treasure and becoming the Pirate King.",
+      "origine": "One Piece",
+      "description": "Monkey D. Luffy est le capitaine des Pirates au Chapeau de Paille et est connu pour ses abilities semblables au caoutchouc après avoir mangé le Fruit du Démon Gomu Gomu no Mi. Il rêve de trouver le légendaire trésor One Piece et de devenir le Roi des Pirates.",
       "equipements": [
         {
-          "name": "Straw Hat",
-          "description": "Luffy's trademark straw hat."
+          "nom": "Chapeau de Paille",
+          "description": "Le chapeau de paille emblématique de Luffy."
         },
         {
-          "name": "Gomu Gomu no Mi",
-          "description": "The Devil Fruit that gives Luffy rubber-like abilities."
+          "nom": "Gomu Gomu no Mi",
+          "description": "Le Fruit du Démon qui donne à Luffy des abilities semblables au caoutchouc."
         }
       ],
       "abilities": [
         {
-          "name": "Gum-Gum Pistol",
-          "description": "Luffy stretches his arm and delivers a powerful punch."
+          "nom": "Pistolet Gum-Gum",
+          "description": "Luffy étire son bras et délivre un puissant coup de poing."
         },
         {
-          "name": "Gum-Gum Gatling",
-          "description": "Luffy rapidly punches his opponent with incredible speed."
+          "nom": "Gatling Gum-Gum",
+          "description": "Luffy frappe rapidement son adversaire avec une vitesse incroyable."
         }
       ],
       "image": "./static/img/monkey_d_luffy.png"
     },
     {
-      "name": "Geralt of Rivia",
-      "role": "protagonist",
+      "name": "Geralt de Riv",
+      "role": "protagoniste",
       "provenance": "The Witcher",
-      "description": "Geralt of Rivia is a monster hunter, also known as a Witcher, mutated to have superhuman abilities and trained to fight monstrous creatures. He travels the Continent slaying beasts and searching for his adopted daughter, Ciri.",
+      "origine": "The Witcher",
+      "description": "Geralt de Riv est un chasseur de monstres, également connu sous le nom de Sorceleur, muté pour avoir des abilities surhumaines et entraîné pour combattre des créatures monstrueuses. Il parcourt le Continent en tuant des bêtes et en recherchant sa fille adoptive, Ciri.",
       "equipements": [
         {
-          "name": "Steel Sword",
-          "description": "A sword used to slay non-magical creatures."
+          "nom": "Épée en acier",
+          "description": "Une épée utilisée pour tuer les créatures non magiques."
         },
         {
-          "name": "Silver Sword",
-          "description": "A sword used to slay magical creatures."
+          "nom": "Épée en argent",
+          "description": "Une épée utilisée pour tuer les créatures magiques."
         },
         {
-          "name": "Witcher's Medallion",
-          "description": "A medallion that vibrates in the presence of magic."
+          "nom": "Médaillon de Sorceleur",
+          "description": "Un médaillon qui vibre en présence de magie."
         }
       ],
       "abilities": [
         {
-          "name": "Witcher Signs",
-          "description": "Geralt can cast magical signs including Igni (fire), Quen (shield), and Aard (telekinesis)."
+          "nom": "Signes de Sorceleur",
+          "description": "Geralt peut lancer des signes magiques incluant Igni (feu), Quen (bouclier) et Aard (télékinésie)."
         },
         {
-          "name": "Enhanced Senses",
-          "description": "Geralt has enhanced senses, reflexes, and strength due to Witcher mutations."
+          "nom": "Sens Accrus",
+          "description": "Geralt a des sens, des réflexes et une force accrus grâce aux mutations de Sorceleur."
         }
       ],
       "image": "./static/img/geralt_of_rivia.jpg"

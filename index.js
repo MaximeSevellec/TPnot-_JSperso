@@ -26,6 +26,48 @@ async function loadCharacters() {
   }
 }
 
+async function noter(nameCharacter) {
+  const note = prompt('Entrez votre note :');
+  
+  try {
+    // Charger les données existantes de notes
+    const response = await fetch('./static/json/notes.json');
+    let notesData = await response.json();
+    let characters = notesData.characters;
+
+    // Rechercher le personnage dans la liste des personnages
+    const characterIndex = characters.findIndex(character => character.name === nameCharacter);
+    if (characterIndex === -1) {
+      console.error('Personnage non trouvé');
+      return;
+    }
+
+    // Ajouter la note à la liste des notes
+    if (!characters[characterIndex].notes) {
+      characters[characterIndex].notes = [];
+    }
+
+    characters[characterIndex].notes.push(parseInt(note));
+
+    // Sauvegarder les données de notes
+
+    const responseSave = await fetch('./static/json/notes.json', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(notesData)
+    });
+
+    if (responseSave.ok) {
+      alert('Note ajoutée avec succès');
+    }
+
+  } catch (error) {
+    console.error('Erreur lors de l\'ajout de la note :', error);
+  }
+}
+
 // Fonction pour afficher les détails d'un personnage
 function displayCharacterDetail(character) {
   const characterDetail = document.getElementById('character-detail');
@@ -35,26 +77,29 @@ function displayCharacterDetail(character) {
     <p>${character.description}</p>
     <h3>Equipements:</h3>
     <ul>
-      ${character.equipements.map(equipment => `<li>${equipment.name}: ${equipment.description}</li>`).join('')}
+      ${character.equipements.map(equipment => `<li>${equipment.nom}: ${equipment.description}</li>`).join('')}
     </ul>
     <h3>Abilities:</h3>
     <ul>
-      ${character.abilities.map(ability => `<li>${ability.name}: ${ability.description}</li>`).join('')}
+      ${character.abilities.map(ability => `<li>${ability.nom}: ${ability.description}</li>`).join('')}
     </ul>
     <h3>Provenance:</h3>
     <p>${character.provenance}</p>
-    <img src="${character.image}" alt="${character.name}">
+    <img src="${character.image}" alt="${character.nom}">
   `;
+  const noteButton = document.createElement('button');
+  noteButton.textContent = 'Noter';
+  noteButton.addEventListener('click', () => noter(character.name));
+  characterDetail.appendChild(noteButton);
 }
 
 function displayCharacter(character) {
-    const characterList = document.getElementById('character-list');
-    const characterElement = document.createElement('li');
-    characterElement.textContent = character.name;
-    characterElement.addEventListener('click', () => displayCharacterDetail(character));
-    characterList.appendChild(characterElement);
+  const characterList = document.getElementById('character-list');
+  const characterElement = document.createElement('li');
+  characterElement.textContent = character.name;
+  characterElement.addEventListener('click', () => displayCharacterDetail(character));
+  characterList.appendChild(characterElement);
 }
-
 
 // Fonction principale pour initialiser l'application
 async function initializeApp() {
