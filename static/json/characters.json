@@ -1,0 +1,89 @@
+{
+  "characters": [
+    {
+      "name": "Sung Jin-Woo",
+      "role": "protagonist",
+      "provenance": "Solo Leveling",
+      "description": "Sung Jin-Woo is the protagonist of the story. He is an E-rank hunter and is known as the weakest hunter in the world. He is a hardworking and determined person who is willing to do anything to protect his family.",
+      "equipements": [
+        {
+          "name": "Dagger",
+          "description": "A dagger that Sung Jin-Woo uses to fight monsters."
+        },
+        {
+          "name": "Armor",
+          "description": "A set of armor that Sung Jin-Woo uses to protect himself from monsters."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Shadow Exchange",
+          "description": "Sung Jin-Woo can switch places with his shadow."
+        },
+        {
+          "name": "Shadow Extraction",
+          "description": "Sung Jin-Woo can extract shadows from monsters and use them to fight."
+        }
+      ],
+      "image": "./static/img/sung_jin_woo_7220.png"
+    },
+    {
+      "name": "Monkey D. Luffy",
+      "role": "protagonist",
+      "provenance": "One Piece",
+      "description": "Monkey D. Luffy is the captain of the Straw Hat Pirates and is known for his rubber-like abilities after eating the Gomu Gomu no Mi Devil Fruit. He dreams of finding the legendary One Piece treasure and becoming the Pirate King.",
+      "equipements": [
+        {
+          "name": "Straw Hat",
+          "description": "Luffy's trademark straw hat."
+        },
+        {
+          "name": "Gomu Gomu no Mi",
+          "description": "The Devil Fruit that gives Luffy rubber-like abilities."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Gum-Gum Pistol",
+          "description": "Luffy stretches his arm and delivers a powerful punch."
+        },
+        {
+          "name": "Gum-Gum Gatling",
+          "description": "Luffy rapidly punches his opponent with incredible speed."
+        }
+      ],
+      "image": "./static/img/monkey_d_luffy.png"
+    },
+    {
+      "name": "Geralt of Rivia",
+      "role": "protagonist",
+      "provenance": "The Witcher",
+      "description": "Geralt of Rivia is a monster hunter, also known as a Witcher, mutated to have superhuman abilities and trained to fight monstrous creatures. He travels the Continent slaying beasts and searching for his adopted daughter, Ciri.",
+      "equipements": [
+        {
+          "name": "Steel Sword",
+          "description": "A sword used to slay non-magical creatures."
+        },
+        {
+          "name": "Silver Sword",
+          "description": "A sword used to slay magical creatures."
+        },
+        {
+          "name": "Witcher's Medallion",
+          "description": "A medallion that vibrates in the presence of magic."
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Witcher Signs",
+          "description": "Geralt can cast magical signs including Igni (fire), Quen (shield), and Aard (telekinesis)."
+        },
+        {
+          "name": "Enhanced Senses",
+          "description": "Geralt has enhanced senses, reflexes, and strength due to Witcher mutations."
+        }
+      ],
+      "image": "./static/img/geralt_of_rivia.jpg"
+    }
+  ]
+}
