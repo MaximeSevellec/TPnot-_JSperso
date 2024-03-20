@@ -9,19 +9,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestion de personnages</title>
 </head>
-<body>
-  <header>
+<header>
     <h1>Gestion de personnages</h1>
-  </header>
+</header>
+<input type="text" id="search" placeholder="Recherche..."> </div>
+<body>
   <main>
     <div id="character-list"></div>
     <div id="character-detail"></div>
+    <div id="container-search">
   </main>
-  <footer>
-    <p>© 2024 Gestion de personnages</p>
-  </footer>
 <script type="module" src="index.js"></script>
 </body>
+<footer>
+    <p>© 2024 Gestion de personnages</p>
+</footer>
 </html>
 
 

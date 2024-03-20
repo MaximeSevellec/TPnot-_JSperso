@@ -93,12 +93,32 @@ function displayCharacterDetail(character) {
   characterDetail.appendChild(noteButton);
 }
 
-function displayCharacter(character) {
+function hideCharacterDetail() {
+  const characterDetail = document.getElementById('character-detail');
+  characterDetail.innerHTML = '';
+}
+
+document.getElementById('search').addEventListener('keyup', function(event) {
+  const search = event.target.value.toLowerCase();
   const characterList = document.getElementById('character-list');
-  const characterElement = document.createElement('li');
-  characterElement.textContent = character.name;
-  characterElement.addEventListener('click', () => displayCharacterDetail(character));
-  characterList.appendChild(characterElement);
+  const characters = characterList.getElementsByTagName('li');
+  Array.from(characters).forEach(character => {
+    const name = character.textContent.toLowerCase();
+    if (name.indexOf(search) === -1) {
+      character.style.display = 'none';
+    } else {
+      character.style.display = 'block';
+    }
+  });
+} );
+
+function displayCharacter(character) {
+    const characterList = document.getElementById('character-list');
+    const characterElement = document.createElement('li');
+    characterElement.textContent = character.name;
+    characterElement.addEventListener('click', () => displayCharacterDetail(character));
+    characterElement.addEventListener('dblclick', hideCharacterDetail);
+    characterList.appendChild(characterElement);
 }
 
 // Fonction principale pour initialiser l'application
@@ -109,3 +129,4 @@ async function initializeApp() {
 
 // Appel de la fonction principale pour démarrer l'application
 initializeApp();
+
