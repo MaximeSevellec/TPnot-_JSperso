@@ -26,51 +26,36 @@ async function loadCharacters() {
   }
 }
 
-async function noter(nameCharacter) {
-  const note = prompt('Entrez votre note :');
-  
-  try {
-    // Charger les données existantes de notes
-    const response = await fetch('./static/json/notes.json');
-    let notesData = await response.json();
-    let characters = notesData.characters;
-
-    // Rechercher le personnage dans la liste des personnages
-    const characterIndex = characters.findIndex(character => character.name === nameCharacter);
-    if (characterIndex === -1) {
-      console.error('Personnage non trouvé');
-      return;
+async function getNotes() {
+    const response = await fetch('http://localhost:3000/character');
+    if (!response.ok) {
+        throw new Error('Erreur de récupération des données.');
     }
-
-    // Ajouter la note à la liste des notes
-    if (!characters[characterIndex].notes) {
-      characters[characterIndex].notes = [];
-    }
-
-    characters[characterIndex].notes.push(parseInt(note));
-
-    // Sauvegarder les données de notes
-
-    const responseSave = await fetch('./static/json/notes.json', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(notesData)
-    });
-
-    if (responseSave.ok) {
-      alert('Note ajoutée avec succès');
-    }
-
-  } catch (error) {
-    console.error('Erreur lors de l\'ajout de la note :', error);
-  }
+    return await response.json();
 }
 
-// Fonction pour afficher les détails d'un personnage
-function displayCharacterDetail(character) {
-  const characterDetail = document.getElementById('character-detail');
+async function noter(characterData) {
+    const notes = await getNotes();
+    if(notes[characterData] === undefined) {
+        notes[characterData] = [1];
+    }else{
+      notes[characterData].push(2);
+    }
+    const response = await fetch('http://localhost:3000/character', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(notes)
+    });
+    if (!response.ok) {
+        throw new Error('Erreur de sauvegarde des données.');
+    }
+    console.log('Note ajoutée');
+}
+
+async function displayCharacterDetail(character) {
+  const characterDetail = document.getElementById('character-list');
   characterDetail.innerHTML = `
     <h2>${character.name}</h2>
     <p><strong>Role:</strong> ${character.role}</p>
@@ -90,12 +75,11 @@ function displayCharacterDetail(character) {
   const noteButton = document.createElement('button');
   noteButton.textContent = 'Noter';
   noteButton.addEventListener('click', () => noter(character.name));
+  const retour = document.createElement('button');
+  retour.textContent = 'Retour';
+  retour.addEventListener('click', () => initializeApp());
+  characterDetail.appendChild(retour);
   characterDetail.appendChild(noteButton);
-}
-
-function hideCharacterDetail() {
-  const characterDetail = document.getElementById('character-detail');
-  characterDetail.innerHTML = '';
 }
 
 document.getElementById('search').addEventListener('keyup', function(event) {
@@ -110,23 +94,26 @@ document.getElementById('search').addEventListener('keyup', function(event) {
       character.style.display = 'block';
     }
   });
-} );
+});
 
 function displayCharacter(character) {
     const characterList = document.getElementById('character-list');
-    const characterElement = document.createElement('li');
+    const divEleme = document.createElement('div');
+    const imgElement = document.createElement('img');
+    imgElement.src = character.image;
+    const characterElement = document.createElement('p');
     characterElement.textContent = character.name;
-    characterElement.addEventListener('click', () => displayCharacterDetail(character));
-    characterElement.addEventListener('dblclick', hideCharacterDetail);
-    characterList.appendChild(characterElement);
+    divEleme.addEventListener('click', () => displayCharacterDetail(character));
+    divEleme.appendChild(imgElement);
+    divEleme.appendChild(characterElement);
+    characterList.appendChild(divEleme);
 }
 
-// Fonction principale pour initialiser l'application
 async function initializeApp() {
   const characters = await loadCharacters();
+  document.getElementById('character-list').innerHTML = '';
   characters.forEach(displayCharacter);
 }
 
-// Appel de la fonction principale pour démarrer l'application
 initializeApp();
 
