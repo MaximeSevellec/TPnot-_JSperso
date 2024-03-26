@@ -107,12 +107,18 @@ async function displayCharacterDetail(character) {
       </div>
       <button id="retour">Retour</button>
       <button id="noter">Noter</button>
-      <button id="favo">Ajouter aux favoris</button>
+      <button id="favo">Ajouter des favoris</button>
     </div>
   `;
+  if (JSON.parse(localStorage.getItem('fav')).includes(character.name)) {
+    document.getElementById('favo').textContent = 'Retirer des favoris';
+    document.getElementById('favo').removeEventListener('click', () => addFav(character.name));
+    document.getElementById('favo').addEventListener('click', () => removeFav(character.name));
+  }
   document.getElementById('retour').addEventListener('click', () => initializeApp());
   document.getElementById('noter').addEventListener('click', () => noter(character.name));
   document.getElementById('favo').addEventListener('click', () => addFav(character.name));
+
 }
 
 document.getElementById('search').addEventListener('keyup', async function (event) {
@@ -177,15 +183,17 @@ async function displayCharactersByPage(recherche) {
 // ajouter des perso en favoris
 function addFav(character) {
   var fav = JSON.parse(localStorage.getItem('fav')) || [];
-  if (fav.includes(character)) {
-    alert("Ce personnage est déjà en favoris");
-  } else {
-    fav.push(character);
-    localStorage.setItem('fav', JSON.stringify(fav));
-    alert("Personnage ajouté aux favoris");
-  }
-  console.log(fav);
+  fav.push(character);
+  localStorage.setItem('fav', JSON.stringify(fav));
+  alert("Personnage ajouté aux favoris");
 }
+
+function removeFav(character) {
+  var fav = JSON.parse(localStorage.getItem('fav')) || [];
+    fav = fav.filter(item => item !== character);
+    localStorage.setItem('fav', JSON.stringify(fav));
+    alert("Personnage retiré des favoris");
+  }
 
 function displayFav() {
   const fav = JSON.parse(localStorage.getItem('fav')) || [];
@@ -195,6 +203,10 @@ function displayFav() {
     const characters = await loadCharacters(character);
     characters.forEach(displayCharacter);
   });
+  const retour = document.createElement('button');
+  retour.textContent = 'Retour';
+  retour.addEventListener('click', () => initializeApp());
+  document.getElementById('pagination').appendChild(retour);
 }
 
 initializeApp();
