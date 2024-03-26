@@ -1,4 +1,4 @@
-const charactersPerPage = 14;
+const charactersPerPage = 12;
 let nbCharacters = 0;
 let nbPages = 1;
 let currentPage = 1;
@@ -77,34 +77,42 @@ async function noter(characterData) {
 async function displayCharacterDetail(character) {
   document.getElementById('pagination').innerHTML = '';
   const characterDetail = document.getElementById('character-list');
+  characterDetail.classList.add('character-detail');
+  
   characterDetail.innerHTML = `
-    <h2>${character.name}</h2>
-    <p><strong>Role:</strong> ${character.role}</p>
-    <p>${character.description}</p>
-    <h3>Equipements:</h3>
-    <ul>
-      ${character.equipements.map(equipment => `<li>${equipment.nom}: ${equipment.description}</li>`).join('')}
-    </ul>
-    <h3>Abilities:</h3>
-    <ul>
-      ${character.abilities.map(ability => `<li>${ability.nom}: ${ability.description}</li>`).join('')}
-    </ul>
-    <h3>Provenance:</h3>
-    <p>${character.provenance}</p>
-    <img src="${character.image}" alt="${character.nom}">
+    <div>
+      <div>
+          <img src="${character.image}" alt="${character.nom}">
+          <h2>${character.name}</h2>
+          <p>${character.description}</p>
+      </div>
+      
+      <div>
+          <h3>Equipements:</h3>
+          <ul>
+              ${character.equipements.map(equipment => `<li>${equipment.nom}: ${equipment.description}</li>`).join('')}
+          </ul>
+      </div>
+
+      <div>
+          <h3>Abilities:</h3>
+          <ul>
+              ${character.abilities.map(ability => `<li>${ability.nom}: ${ability.description}</li>`).join('')}
+          </ul>
+      </div>
+
+      <div>
+          <h3>Provenance:</h3>
+          <p>${character.provenance}</p>
+      </div>
+      <button id="retour">Retour</button>
+      <button id="noter">Noter</button>
+      <button id="favo">Ajouter aux favoris</button>
+    </div>
   `;
-  const noteButton = document.createElement('button');
-  noteButton.textContent = 'Noter';
-  noteButton.addEventListener('click', () => noter(character.name));
-  const retour = document.createElement('button');
-  retour.textContent = 'Retour';
-  retour.addEventListener('click', () => initializeApp());
-  characterDetail.appendChild(retour);
-  characterDetail.appendChild(noteButton);
-  const favButton = document.createElement('button');
-  favButton.textContent = 'Ajouter aux favoris';
-  favButton.addEventListener('click', () => addFav(character.name));
-  characterDetail.appendChild(favButton);
+  document.getElementById('retour').addEventListener('click', () => initializeApp());
+  document.getElementById('noter').addEventListener('click', () => noter(character.name));
+  document.getElementById('favo').addEventListener('click', () => addFav(character.name));
 }
 
 document.getElementById('search').addEventListener('keyup', async function (event) {
@@ -121,13 +129,13 @@ document.getElementById('search').addEventListener('keyup', async function (even
   displayCharactersByPage(search);
 });
 
-const buttonFav = document.getElementById('fav');
-buttonFav.addEventListener('click', () => displayFav());
+document.getElementById('fav').addEventListener('click', () => displayFav());
 
 function displayCharacter(character) {
   const characterList = document.getElementById('character-list');
   const divEleme = document.createElement('div');
   const imgElement = document.createElement('img');
+  divEleme.classList.add('character');
   imgElement.src = character.image;
   const characterElement = document.createElement('p');
   characterElement.textContent = character.name;
@@ -140,6 +148,7 @@ function displayCharacter(character) {
 async function initializeApp() {
   const characters = await loadCharacters("");
   document.getElementById('character-list').innerHTML = '';
+  document.getElementById('character-list').classList.remove('character-detail');
   nbCharacters = characters.length;
   nbPages = Math.ceil(nbCharacters / charactersPerPage);
   document.getElementById('pagination').innerHTML = '';

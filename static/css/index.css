@@ -1,10 +1,8 @@
-/* Reset default styles */
 html, body, header, main, footer {
     margin: 0;
     padding: 0;
 }
 
-/* Global styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -44,6 +42,12 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.character-detail{
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+}
+
 #pagination {
     display: flex;
     justify-content: center;
@@ -62,4 +66,15 @@ footer {
     padding: 20px;
     text-align: center;
     font-size: 14px;
+}
+
+.character{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.character:hover{
+    background-color: rgb(214, 214, 214) !important;
+    cursor: pointer;
 }
