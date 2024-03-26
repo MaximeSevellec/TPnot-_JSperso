@@ -83,6 +83,370 @@
         }
       ],
       "image": "./static/img/naruto.png"
+    },
+    {
+      "name": "Gon Freecss",
+      "role": "protagoniste",
+      "provenance": "Hunter x Hunter",
+      "origine": "Hunter x Hunter",
+      "description": "Gon Freecss est un jeune garçon qui veut devenir un Hunter pour retrouver son père. Il est un personnage courageux et déterminé qui est prêt à tout pour atteindre son objectif.",
+      "equipements": [
+        {
+          "nom": "Canne à pêche",
+          "description": "Une canne à pêche que Gon utilise pour combattre."
+        },
+        {
+          "nom": "Licence de Hunter",
+          "description": "Une licence qui permet à Gon de devenir un Hunter."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Jajanken",
+          "description": "Une technique de combat qui combine le rock, le papier et les ciseaux."
+        },
+        {
+          "nom": "Renforcement",
+          "description": "Une technique qui permet à Gon d'augmenter sa force et sa vitesse."
+        }
+      ],
+      "image": "./static/img/gon.png"
+    },
+    {
+      "name": "Ichigo Kurosaki",
+      "role": "protagoniste",
+      "provenance": "Bleach",
+      "origine": "Bleach",
+      "description": "Ichigo Kurosaki est un lycéen qui devient un Shinigami après avoir rencontré Rukia Kuchiki. Il est déterminé à protéger sa famille et ses amis des Hollows et des autres menaces.",
+      "equipements": [
+        {
+          "nom": "Zanpakuto",
+          "description": "Une épée spirituelle que Ichigo utilise pour combattre."
+        },
+        {
+          "nom": "Hollow Mask",
+          "description": "Un masque qui donne à Ichigo des abilities de Hollow."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Getsuga Tensho",
+          "description": "Une technique qui libère une vague d'énergie tranchante."
+        },
+        {
+          "nom": "Bankai",
+          "description": "Une forme avancée de Zanpakuto qui augmente la puissance de Ichigo."
+        }
+      ],
+      "image": "./static/img/ichigo.png"
+    },
+    {
+      "name": "Eren Yeager",
+      "role": "protagoniste",
+      "provenance": "L'Attaque des Titans",
+      "origine": "L'Attaque des Titans",
+      "description": "Eren Yeager est un soldat de l'armée qui se bat contre les Titans pour protéger l'humanité. Il est déterminé à venger la mort de sa mère et à découvrir la vérité sur les Titans.",
+      "equipements": [
+        {
+          "nom": "Odm Gear",
+          "description": "Un équipement qui permet à Eren de se déplacer rapidement et de combattre les Titans."
+        },
+        {
+          "nom": "Épée",
+          "description": "Une épée que Eren utilise pour combattre les Titans."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Titan Shifter",
+          "description": "Eren peut se transformer en Titan pour combattre les Titans."
+        },
+        {
+          "nom": "Hardening",
+          "description": "Une technique qui renforce le corps de Eren pour le protéger des attaques des Titans."
+        }
+      ],
+      "image": "./static/img/eren.png"
+    },
+    {
+      "name": "Goku",
+      "role": "protagoniste",
+      "provenance": "Dragon Ball",
+      "origine": "Dragon Ball",
+      "description": "Goku est un Saiyan qui est connu pour être l'un des plus grands combattants de l'univers. Il est déterminé à devenir plus fort et à protéger la Terre des menaces.",
+      "equipements": [
+        {
+          "nom": "Turtle School Gi",
+          "description": "L'uniforme de combat de Goku."
+        },
+        {
+          "nom": "Senzu Bean",
+          "description": "Une fève magique qui guérit les blessures de Goku."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Kamehameha",
+          "description": "Une technique qui libère une vague d'énergie."
+        },
+        {
+          "nom": "Super Saiyan",
+          "description": "Une transformation qui augmente la puissance de Goku de manière significative."
+        }
+      ],
+      "image": "./static/img/goku.png"
+    },
+    {
+      "name": "Saitama",
+      "role": "protagoniste",
+      "provenance": "One Punch Man",
+      "origine": "One Punch Man",
+      "description": "Saitama est un héros qui est capable de vaincre n'importe quel adversaire en un seul coup. Il est déterminé à trouver un adversaire digne de lui.",
+      "equipements": [
+        {
+          "nom": "Costume de Héros",
+          "description": "Le costume de héros de Saitama."
+        },
+        {
+          "nom": "Gants de Combat",
+          "description": "Des gants que Saitama utilise pour combattre."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "One Punch",
+          "description": "Une technique qui permet à Saitama de vaincre n'importe quel adversaire en un seul coup."
+        },
+        {
+          "nom": "Serious Series",
+          "description": "Une série de techniques puissantes que Saitama utilise pour combattre des adversaires plus forts."
+        }
+      ],
+      "image": "./static/img/saitama.png"
+    },
+    {
+      "name": "Levi Ackerman",
+      "role": "protagoniste",
+      "provenance": "L'Attaque des Titans",
+      "origine": "L'Attaque des Titans",
+      "description": "Levi Ackerman est un soldat de l'armée qui est connu pour être l'un des meilleurs combattants de l'humanité. Il est déterminé à protéger l'humanité des Titans et à venger la mort de ses amis.",
+      "equipements": [
+        {
+          "nom": "Odm Gear",
+          "description": "Un équipement qui permet à Levi de se déplacer rapidement et de combattre les Titans."
+        },
+        {
+          "nom": "Épée",
+          "description": "Une épée que Levi utilise pour combattre les Titans."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Thunder Spear",
+          "description": "Une arme explosive que Levi utilise pour combattre les Titans."
+        },
+        {
+          "nom": "Ackerman Power",
+          "description": "Une technique qui augmente la force et la vitesse de Levi de manière significative."
+        }
+      ],
+      "image": "./static/img/levi.png"
+    },
+    {
+      "name": "Tanjiro Kamado",
+      "role": "protagoniste",
+      "provenance": "Demon Slayer",
+      "origine": "Demon Slayer",
+      "description": "Tanjiro Kamado est un chasseur de démons qui est déterminé à venger la mort de sa famille et à protéger sa sœur Nezuko. Il est connu pour son sens de l'odorat aiguisé et sa compassion envers les démons.",
+      "equipements": [
+        {
+          "nom": "Nichirin Sword",
+          "description": "Une épée spéciale que Tanjiro utilise pour combattre les démons."
+        },
+        {
+          "nom": "Hinokami Kagura",
+          "description": "Une danse de feu que Tanjiro utilise pour augmenter sa puissance."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Water Breathing",
+          "description": "Une technique qui utilise l'eau pour attaquer les démons."
+        },
+        {
+          "nom": "Hinokami Kagura",
+          "description": "Une danse de feu qui augmente la puissance de Tanjiro de manière significative."
+        }
+      ],
+      "image": "./static/img/tanjiro.png"
+    },
+    {
+      "name": "Edward Elric",
+      "role": "protagoniste",
+      "provenance": "Fullmetal Alchemist",
+      "origine": "Fullmetal Alchemist",
+      "description": "Edward Elric est un alchimiste d'État qui est connu pour avoir perdu son bras et sa jambe lors d'une expérience d'alchimie interdite. Il est déterminé à retrouver son corps d'origine et à protéger son frère Alphonse.",
+      "equipements": [
+        {
+          "nom": "Automail",
+          "description": "Un bras et une jambe mécaniques que Edward utilise pour combattre."
+        },
+        {
+          "nom": "Alchemist Watch",
+          "description": "Une montre spéciale qui permet à Edward de transmuter sans cercle de transmutation."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Transmutation",
+          "description": "Une technique qui permet à Edward de transformer la matière en une autre."
+        },
+        {
+          "nom": "Alchemist Watch",
+          "description": "Une montre spéciale qui permet à Edward de transmuter sans cercle de transmutation."
+        }
+      ],
+      "image": "./static/img/edward.png"
+    },
+    {
+      "name": "Lelouch vi Britannia",
+      "role": "antagoniste",
+      "provenance": "Code Geass",
+      "origine": "Code Geass",
+      "description": "Lelouch vi Britannia est un prince exilé qui devient le leader de la résistance contre l'Empire Britannien. Il est déterminé à venger la mort de sa mère et à créer un monde meilleur pour sa sœur Nunnally.",
+      "equipements": [
+        {
+          "nom": "Geass",
+          "description": "Un pouvoir mystérieux qui permet à Lelouch de contrôler les autres."
+        },
+        {
+          "nom": "Knightmare Frame",
+          "description": "Un mecha de combat que Lelouch utilise pour combattre."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Geass",
+          "description": "Un pouvoir mystérieux qui permet à Lelouch de contrôler les autres."
+        },
+        {
+          "nom": "Strategist",
+          "description": "Une capacité à planifier des stratégies complexes pour atteindre ses objectifs."
+        }
+      ],
+      "image": "./static/img/lelouch.png"
+    },
+    {
+      "name": "Light Yagami",
+      "role": "antagoniste",
+      "provenance": "Death Note",
+      "origine": "Death Note",
+      "description": "Light Yagami est un lycéen qui trouve un Death Note, un cahier qui permet de tuer n'importe qui en écrivant son nom. Il est déterminé à créer un monde utopique en éliminant les criminels.",
+      "equipements": [
+        {
+          "nom": "Death Note",
+          "description": "Un cahier qui permet de tuer n'importe qui en écrivant son nom."
+        },
+        {
+          "nom": "Lunettes",
+          "description": "Des lunettes que Light utilise pour cacher son identité."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Death Note",
+          "description": "Un cahier qui permet de tuer n'importe qui en écrivant son nom."
+        },
+        {
+          "nom": "Strategist",
+          "description": "Une capacité à planifier des stratégies complexes pour atteindre ses objectifs."
+        }
+      ],
+      "image": "./static/img/light.png"
+    },
+    {
+      "name": "Aizen Sosuke",
+      "role": "antagoniste",
+      "provenance": "Bleach",
+      "origine": "Bleach",
+      "description": "Aizen Sosuke est un ancien capitaine de la Soul Society qui trahit ses camarades pour obtenir plus de pouvoir. Il est déterminé à devenir le roi des Shinigami et à créer un monde parfait.",
+      "equipements": [
+        {
+          "nom": "Zanpakuto",
+          "description": "Une épée spirituelle que Aizen utilise pour combattre."
+        },
+        {
+          "nom": "Hogyoku",
+          "description": "Un artefact mystérieux qui augmente les abilities de Aizen."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Kyoka Suigetsu",
+          "description": "Une technique qui crée des illusions pour tromper ses ennemis."
+        },
+        {
+          "nom": "Hogyoku",
+          "description": "Un artefact mystérieux qui augmente les abilities de Aizen."
+        }
+      ],
+      "image": "./static/img/aizen.png"
+    },
+    {
+      "name": "Madara Uchiha",
+      "role": "antagoniste",
+      "provenance": "Naruto",
+      "origine": "Naruto",
+      "description": "Madara Uchiha est un ancien chef du clan Uchiha qui cherche à obtenir le pouvoir du Rinnegan pour créer un monde parfait. Il est déterminé à se venger de la mort de son frère et à réaliser son rêve.",
+      "equipements": [
+        {
+          "nom": "Rinnegan",
+          "description": "Un pouvoir mystérieux qui donne à Madara des abilities divines."
+        },
+        {
+          "nom": "Susanoo",
+          "description": "Une technique qui crée une armure géante pour protéger Madara."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Rinnegan",
+          "description": "Un pouvoir mystérieux qui donne à Madara des abilities divines."
+        },
+        {
+          "nom": "Susanoo",
+          "description": "Une technique qui crée une armure géante pour protéger Madara."
+        }
+      ],
+      "image": "./static/img/madara.png"
+    },
+    {
+      "name": "Meruem",
+      "role": "antagoniste",
+      "provenance": "Hunter x Hunter",
+      "origine": "Hunter x Hunter",
+      "description": "Meruem est le roi des Chimera Ants qui cherche à conquérir le monde et à devenir le plus puissant de tous. Il est déterminé à trouver un adversaire digne de lui.",
+      "equipements": [
+        {
+          "nom": "Nen",
+          "description": "Un pouvoir mystérieux qui donne à Meruem des abilities surhumaines."
+        },
+        {
+          "nom": "Royal Guards",
+          "description": "Des gardes personnels qui protègent Meruem."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Nen",
+          "description": "Un pouvoir mystérieux qui donne à Meruem des abilities surhumaines."
+        },
+        {
+          "nom": "Royal Guards",
+          "description": "Des gardes personnels qui protègent Meruem."
+        }
+      ],
+      "image": "./static/img/meruem.png"
     }
   ]
 }

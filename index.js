@@ -35,11 +35,23 @@ async function getNotes() {
 }
 
 async function noter(characterData) {
+    var maNote = prompt("Entrez votre note pour ce personnage");
+    if(maNote === null || maNote === "") {
+        return;
+    }
+    else if(isNaN(maNote)) {
+        alert("Veuillez entrer un nombre");
+        return;
+    }
+    if(maNote < 0 || maNote > 10) {
+        alert("Veuillez entrer une note entre 0 et 10");
+        return;
+    }
     const notes = await getNotes();
     if(notes[characterData] === undefined) {
-        notes[characterData] = [1];
+        notes[characterData] = [parseInt(maNote)];
     }else{
-      notes[characterData].push(2);
+      notes[characterData].push(parseInt(maNote));
     }
     const response = await fetch('http://localhost:3000/character', {
         method: 'PUT',
