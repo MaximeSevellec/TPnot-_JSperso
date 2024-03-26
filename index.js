@@ -105,6 +105,9 @@ async function displayCharacterDetail(character) {
           <h3>Provenance:</h3>
           <p>${character.provenance}</p>
       </div>
+      <div>
+          <h3>Note moyenne:</h3>
+      </div>
       <button id="retour">Retour</button>
       <button id="noter">Noter</button>
       <button id="favo">Ajouter des favoris</button>
@@ -115,9 +118,12 @@ async function displayCharacterDetail(character) {
     document.getElementById('favo').removeEventListener('click', () => addFav(character.name));
     document.getElementById('favo').addEventListener('click', () => removeFav(character.name));
   }
+  else {
+    document.getElementById('favo').addEventListener('click', () => addFav(character.name));
+  }
   document.getElementById('retour').addEventListener('click', () => initializeApp());
   document.getElementById('noter').addEventListener('click', () => noter(character.name));
-  document.getElementById('favo').addEventListener('click', () => addFav(character.name));
+
 
 }
 
@@ -199,10 +205,17 @@ function displayFav() {
   const fav = JSON.parse(localStorage.getItem('fav')) || [];
   document.getElementById('character-list').innerHTML = '';
   document.getElementById('pagination').innerHTML = '';
-  fav.forEach(async function (character) {
-    const characters = await loadCharacters(character);
-    characters.forEach(displayCharacter);
-  });
+  if (fav.length === 0) {
+    const aucunFav = document.createElement('p');
+    aucunFav.textContent = 'Aucun favoris';
+    document.getElementById('character-list').appendChild(aucunFav);
+  }
+  else {
+    fav.forEach(async function (character) {
+      const characters = await loadCharacters(character);
+      characters.forEach(displayCharacter);
+    });
+  }
   const retour = document.createElement('button');
   retour.textContent = 'Retour';
   retour.addEventListener('click', () => initializeApp());
