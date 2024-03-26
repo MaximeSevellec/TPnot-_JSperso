@@ -1,3 +1,8 @@
+const charactersPerPage = 14;
+let nbCharacters = 0;
+let nbPages = 1;
+let currentPage = 1;
+
 // Définition des classes
 class Character {
   constructor(name, role, provenance, description, equipements, abilities, image) {
@@ -17,6 +22,24 @@ async function loadCharacters() {
     const response = await fetch('./static/json/characters.json');
     const data = await response.json();
     return data.characters.map(characterData => {
+      const { name, role, provenance, description, equipements, abilities, image } = characterData;
+      return new Character(name, role, provenance, description, equipements, abilities, image);
+    });
+  } catch (error) {
+    console.error('Erreur lors du chargement des personnages :', error);
+    return [];
+  }
+}
+
+async function loadCharactersByStartAndEnd(start, end) {
+  try {
+    const response = await fetch('./static/json/characters.json');
+    const data = await response.json();
+    if (data.characters.length < end) {
+      end = data.characters.length;
+    }
+    const charactersData = data.characters.slice(start, end);
+    return charactersData.map(characterData => {
       const { name, role, provenance, description, equipements, abilities, image } = characterData;
       return new Character(name, role, provenance, description, equipements, abilities, image);
     });
@@ -67,6 +90,7 @@ async function noter(characterData) {
 }
 
 async function displayCharacterDetail(character) {
+  document.getElementById('pagination').innerHTML = '';
   const characterDetail = document.getElementById('character-list');
   characterDetail.innerHTML = `
     <h2>${character.name}</h2>
@@ -124,8 +148,29 @@ function displayCharacter(character) {
 async function initializeApp() {
   const characters = await loadCharacters();
   document.getElementById('character-list').innerHTML = '';
+  nbCharacters = characters.length;
+  nbPages = Math.ceil(nbCharacters / charactersPerPage);
+  document.getElementById('pagination').innerHTML = '';
+  for (let i = 1; i <= nbPages; i++) {
+    ajouterBoutonPageSupp(i);
+  }
+  displayCharactersByPage();
+}
+
+function ajouterBoutonPageSupp(numPage) {
+  const boutonPage = document.createElement('button');
+  boutonPage.textContent = numPage;
+  boutonPage.addEventListener('click', () => {
+    currentPage = numPage;
+    document.getElementById('character-list').innerHTML = '';
+    displayCharactersByPage();
+  });
+  document.getElementById('pagination').appendChild(boutonPage);
+}
+
+async function displayCharactersByPage() {
+  const characters = await loadCharactersByStartAndEnd((currentPage - 1) * charactersPerPage, currentPage * charactersPerPage);
   characters.forEach(displayCharacter);
 }
 
 initializeApp();
-
