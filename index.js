@@ -101,6 +101,10 @@ async function displayCharacterDetail(character) {
   retour.addEventListener('click', () => initializeApp());
   characterDetail.appendChild(retour);
   characterDetail.appendChild(noteButton);
+  const favButton = document.createElement('button');
+  favButton.textContent = 'Ajouter aux favoris';
+  favButton.addEventListener('click', () => addFav(character.name));
+  characterDetail.appendChild(favButton);
 }
 
 document.getElementById('search').addEventListener('keyup', async function (event) {
@@ -116,6 +120,9 @@ document.getElementById('search').addEventListener('keyup', async function (even
   }
   displayCharactersByPage(search);
 });
+
+const buttonFav = document.getElementById('fav');
+buttonFav.addEventListener('click', () => displayFav());
 
 function displayCharacter(character) {
   const characterList = document.getElementById('character-list');
@@ -156,6 +163,29 @@ function ajouterBoutonPageSupp(numPage) {
 async function displayCharactersByPage(recherche) {
   const characters = await loadCharacters(recherche, (currentPage - 1) * charactersPerPage, currentPage * charactersPerPage);
   characters.forEach(displayCharacter);
+}
+
+// ajouter des perso en favoris
+function addFav(character) {
+  var fav = JSON.parse(localStorage.getItem('fav')) || [];
+  if (fav.includes(character)) {
+    alert("Ce personnage est déjà en favoris");
+  } else {
+    fav.push(character);
+    localStorage.setItem('fav', JSON.stringify(fav));
+    alert("Personnage ajouté aux favoris");
+  }
+  console.log(fav);
+}
+
+function displayFav() {
+  const fav = JSON.parse(localStorage.getItem('fav')) || [];
+  document.getElementById('character-list').innerHTML = '';
+  document.getElementById('pagination').innerHTML = '';
+  fav.forEach(async function (character) {
+    const characters = await loadCharacters(character);
+    characters.forEach(displayCharacter);
+  });
 }
 
 initializeApp();

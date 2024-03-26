@@ -13,9 +13,10 @@
 <header>
     <h1>Gestion des personnages</h1>
 </header>
-<input type="text" id="search" placeholder="Recherche..."> </div>
 <body>
   <main>
+    <input type="text" id="search" placeholder="Recherche..."> 
+    <button id="fav">Favoris</button>
     <div id="character-list"></div>
     <div id="pagination"></div>
     <div id="container-search"></div>
