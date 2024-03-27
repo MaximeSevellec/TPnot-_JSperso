@@ -34,6 +34,37 @@ async function loadCharacters(recherche, start, end) {
   }
 }
 
+async function loadNotes() {
+  try {
+    const reponse = await fetch('./static/json/notes.json');
+    const data = await reponse.json();
+    console.log(data);
+    return data;
+  }
+  catch (error) {
+    console.error('Erreur lors du chargement des notes :', error);
+    return [];
+  }
+}
+
+async function getNotesByCharacter(characterName) {
+  try {
+    const data = await loadNotes();
+    const characterNotes = data.character[characterName];
+    
+    if (characterNotes) {
+      console.log(`Les notes de ${characterName} sont :`, characterNotes);
+      return characterNotes;
+    } else {
+      console.log(`Le personnage ${characterName} n'a pas de notes.`);
+      return [];
+    }
+  } catch (error) {
+    console.error('Erreur lors de la récupération des notes :', error);
+    return [];
+  }
+}
+
 async function getNotes() {
   const response = await fetch('http://localhost:3000/character');
   if (!response.ok) {
@@ -107,6 +138,13 @@ async function displayCharacterDetail(character) {
       </div>
       <div>
           <h3>Note moyenne:</h3>
+          <p>
+          ${await getNotesByCharacter(character.name).then(notes => {
+            const average = notes.length > 0 ? notes.reduce((a, b) => a + b) / notes.length : 'Pas de note';
+            const numberOfNotes = notes.length;
+            return `${average} (${numberOfNotes} notes)`;
+          })}
+        </p>
       </div>
       <button id="retour">Retour</button>
       <button id="noter">Noter</button>
