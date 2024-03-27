@@ -1,8 +1,6 @@
 export function addParamsToURL(params) {
+    clearURLParams();
     const urlParams = new URLSearchParams(window.location.search);
-    for (const key of Object.keys(params)) {
-        urlParams.delete(key);
-    }
     for (const [key, value] of Object.entries(params)) {
         urlParams.set(key, value);
     }
@@ -16,4 +14,8 @@ export function readParamsFromURL() {
         params[key] = value;
     }
     return params;
+}
+
+export function clearURLParams() {
+    window.history.replaceState({}, '', `${window.location.pathname}`);
 }

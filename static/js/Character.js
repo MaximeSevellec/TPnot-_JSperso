@@ -2,7 +2,7 @@ import { getNotesByCharacter } from './NotesService.js';
 import * as CharacterService from './CharacterService.js';
 import * as NotesService from './NotesService.js';
 import * as FavorisService from './FavorisService.js';
-import { addParamsToURL } from './UrlService.js';
+import { addParamsToURL, clearURLParams } from './UrlService.js';
 
 export default class Character {
   constructor(name, role, provenance, description, equipements, abilities, image) {
@@ -69,7 +69,10 @@ export default class Character {
     } else {
       document.getElementById('favo').addEventListener('click', () => FavorisService.addFav(this.name));
     }
-    document.getElementById('retour').addEventListener('click', () => CharacterService.initializeApp());
+    document.getElementById('retour').addEventListener('click', () => {
+      clearURLParams();
+      CharacterService.initializeApp()
+    });
     document.getElementById('noter').addEventListener('click', () => NotesService.noter(this.name));
   }
 }

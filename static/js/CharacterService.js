@@ -42,8 +42,8 @@ export async function displayCharacter(character) {
 
 export async function displayCharactersByPage(recherche) {
     if (readParamsFromURL().character){
-        console.log(getChatacterByName(readParamsFromURL().character).name);
-        displayCharacter(getChatacterByName(readParamsFromURL().character));
+        var character = await getChatacterByName(readParamsFromURL().character);
+        character.render();
         return;
     }
     const characters = await loadCharacters(recherche, (getCurrentPage() - 1) * getCharactersPerPage(), getCurrentPage() * getCharactersPerPage());
