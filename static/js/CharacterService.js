@@ -28,17 +28,36 @@ async function getChatacterByName(name) {
 
 export async function displayCharacter(character) {
     const characterList = document.getElementById('character-list');
-    const divEleme = document.createElement('div');
+    const divElement = document.createElement('div');
     const imgElement = document.createElement('img');
-    divEleme.classList.add('character');
-    imgElement.src = character.image;
+    divElement.classList.add('character');
+    imgElement.setAttribute('data-src', character.image);
+    imgElement.alt = character.name;
+    imgElement.classList.add('lazy-load');
     const characterElement = document.createElement('p');
     characterElement.textContent = character.name;
-    divEleme.addEventListener('click', () => character.render());
-    divEleme.appendChild(imgElement);
-    divEleme.appendChild(characterElement);
-    characterList.appendChild(divEleme);
+    divElement.addEventListener('click', () => character.render());
+    divElement.appendChild(imgElement);
+    divElement.appendChild(characterElement);
+    characterList.appendChild(divElement);
+    addLazyLoad(imgElement);
 }
+
+function addLazyLoad(img){
+    const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            const lazyImage = entry.target;
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.removeAttribute('data-src');
+            observer.unobserve(lazyImage);
+            }
+        });
+    });
+
+    lazyImageObserver.observe(img);
+}
+
 
 export async function displayCharactersByPage(recherche) {
     if (readParamsFromURL().character){
