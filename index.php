@@ -15,13 +15,16 @@
 </header>
 <body>
   <main>
-    <input type="text" id="search" placeholder="Recherche..."> 
+    <input type="text" id="search" placeholder="Rechercher...">
     <button id="fav">Favoris</button>
     <div id="character-list"></div>
     <div id="pagination"></div>
-    <div id="container-search"></div>
-  </main>
-<script defer type="module" src="index.js"></script>
+
+    <script type="module" src="./static/js/Character.js"></script>
+    <script type="module" src="./static/js/CharacterService.js"></script>
+    <script type="module" src="./static/js/NotesService.js"></script>
+    <script type="module" src="./static/js/Pagination.js"></script>
+    <script type="module" src="./static/js/Main.js"></script>
 </body>
 <footer>
     <p>© 2024 Gestion des personnages</p>
