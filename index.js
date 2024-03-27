@@ -113,7 +113,7 @@ async function displayCharacterDetail(character) {
       <button id="favo">Ajouter des favoris</button>
     </div>
   `;
-  if (JSON.parse(localStorage.getItem('fav')).includes(character.name)) {
+  if (localStorage.getItem('fav') != null && localStorage.getItem('fav').includes(character.name)) {
     document.getElementById('favo').textContent = 'Retirer des favoris';
     document.getElementById('favo').removeEventListener('click', () => addFav(character.name));
     document.getElementById('favo').addEventListener('click', () => removeFav(character.name));
