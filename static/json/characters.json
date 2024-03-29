@@ -447,6 +447,342 @@
         }
       ],
       "image": "./static/img/meruem.png"
+    },
+    {
+      "name": "ayanokoji kiyotaka",
+      "role": "protagoniste",
+      "provenance": "Classroom of the Elite",
+      "origine": "Classroom of the Elite",
+      "description": "Ayanokoji Kiyotaka est un étudiant de la classe D de l'école privée Koudo Ikusei. Il est connu pour être un génie qui cache ses abilities pour rester discret. Il est déterminé à découvrir la vérité sur l'école et à protéger ses amis.",
+      "equipements": [
+        {
+          "nom": "Carnet de Notes",
+          "description": "Un carnet que Ayanokoji utilise pour prendre des notes et planifier ses stratégies."
+        },
+        {
+          "nom": "Ordinateur Portable",
+          "description": "Un ordinateur portable que Ayanokoji utilise pour rechercher des informations et communiquer avec ses amis."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Strategist",
+          "description": "Une capacité à planifier des stratégies complexes pour atteindre ses objectifs."
+        },
+        {
+          "nom": "Analyse",
+          "description": "Une capacité à analyser les situations et à trouver des solutions efficaces."
+        }
+      ],
+      "image": "./static/img/ayanokoji.png"
+    },
+    {
+      "name": "Sora",
+      "role": "protagoniste",
+      "provenance": "No Game No Life",
+      "origine": "No Game No Life",
+      "description": "Sora est un joueur de jeux vidéo qui est transporté dans un monde fantastique avec sa sœur Shiro. Il est connu pour être un génie du jeu qui ne perd jamais. Il est déterminé à gagner tous les jeux et à devenir le roi du monde.",
+      "equipements": [
+        {
+          "nom": "Tablet",
+          "description": "Une tablette spéciale que Sora utilise pour jouer à des jeux et communiquer avec les autres."
+        },
+        {
+          "nom": "Crown",
+          "description": "Une couronne qui symbolise le statut de roi de Sora."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Strategist",
+          "description": "Une capacité à planifier des stratégies complexes pour gagner les jeux."
+        },
+        {
+          "nom": "Gamer",
+          "description": "Une capacité à jouer à n'importe quel jeu avec une compétence incroyable."
+        }
+      ],
+      "image": "./static/img/sora.png"
+    },
+    {
+      "name": "Rimuru Tempest",
+      "role": "protagoniste",
+      "provenance": "That Time I Got Reincarnated as a Slime",
+      "origine": "That Time I Got Reincarnated as a Slime",
+      "description": "Rimuru Tempest est un slime qui est réincarné dans un monde fantastique après sa mort. Il est connu pour être un monstre puissant qui peut absorber les abilities des autres. Il est déterminé à protéger son village et à créer un monde pacifique.",
+      "equipements": [
+        {
+          "nom": "Great Sage",
+          "description": "Un pouvoir mystérieux qui donne à Rimuru des abilities incroyables."
+        },
+        {
+          "nom": "Mask",
+          "description": "Un masque qui cache l'apparence de Rimuru."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Predator",
+          "description": "Une capacité à absorber" 
+        },
+        {
+          "nom": "Great Sage",
+          "description": "Un pouvoir mystérieux qui donne à Rimuru des abilities incroyables."
+        }
+      ],
+      "image": "./static/img/rimuru.png"
+    },
+    {
+      "name": "Meliodas",
+      "role": "protagoniste",
+      "provenance": "The Seven Deadly Sins",
+      "origine": "The Seven Deadly Sins",
+      "description": "Meliodas est le capitaine des Seven Deadly Sins et est connu pour être le péché de la colère. Il est déterminé à protéger le royaume de Liones et à retrouver ses camarades.",
+      "equipements": [
+        {
+          "nom": "Broken Sword",
+          "description": "Une épée cassée que Meliodas utilise pour combattre."
+        },
+        {
+          "nom": "Dragon Handle",
+          "description": "Une poignée de dragon qui augmente la puissance de Meliodas."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Full Counter",
+          "description": "Une technique qui renvoie les attaques de l'ennemi avec une puissance accrue."
+        },
+        {
+          "nom": "Revenge Counter",
+          "description": "Une technique qui renvoie les attaques de l'ennemi avec une puissance accrue."
+        }
+      ],
+      "image": "./static/img/meliodas.png"
+    },
+    {
+      "name": "Natsu Dragneel",
+      "role": "protagoniste",
+      "provenance": "Fairy Tail",
+      "origine": "Fairy Tail",
+      "description": "Natsu Dragneel est un mage de la guilde Fairy Tail et est connu pour être un chasseur de dragons de feu. Il est déterminé à protéger ses amis et à devenir le mage le plus puissant de Fairy Tail.",
+      "equipements": [
+        {
+          "nom": "Scarf",
+          "description": "Une écharpe emblématique que Natsu utilise pour combattre."
+        },
+        {
+          "nom": "Fire Dragon Slayer Magic",
+          "description": "Une magie qui lui permet de contrôler le feu."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Fire Dragon's Roar",
+          "description": "Une technique qui libère une rafale de feu."
+        },
+        {
+          "nom": "Fire Dragon's Iron Fist",
+          "description": "Une technique qui renforce le poing de Natsu avec du feu."
+        }
+      ],
+      "image": "./static/img/natsu.png"
+    },
+    {
+      "name": "Kirito",
+      "role": "protagoniste",
+      "provenance": "Sword Art Online",
+      "origine": "Sword Art Online",
+      "description": "Kirito est un joueur de jeux vidéo qui est piégé dans le monde virtuel de Sword Art Online. Il est connu pour être un épéiste talentueux qui ne recule devant rien pour protéger ses amis.",
+      "equipements": [
+        {
+          "nom": "Elucidator",
+          "description": "Une épée noire que Kirito utilise pour combattre."
+        },
+        {
+          "nom": "Dual Blades",
+          "description": "Une compétence spéciale qui permet à Kirito d'utiliser deux épées à la fois."
+        }
+      ],
+      "abilities": [
+        {
+          "nom": "Sword Skills",
+          "description": "Des compétences spéciales qui augmentent la puissance de Kirito."
+        },
+        {
+          "nom": "Dual Blades",
+          "description": "Une compétence spéciale qui permet à Kirito d'utiliser deux épées à la fois."
+        }
+      ],
+      "image": "./static/img/kirito.png"
+    },
+    {
+      "name" : "sasuke uchiha",
+      "role" : "protagoniste",
+      "provenance" : "naruto",
+      "origine" : "naruto",
+      "description" : "sasuke uchiha est un ninja du village caché de konoha et est connu pour être un membre du clan uchiha. il est déterminé à venger la mort de sa famille et à devenir plus fort pour protéger ses amis.",
+      "equipements" : [
+        {
+          "nom" : "kunai",
+          "description" : "un couteau de lancer que sasuke utilise pour combattre."
+        },
+        {
+          "nom" : "shuriken",
+          "description" : "une étoile de ninja que sasuke utilise pour combattre."
+        }
+      ],
+      "abilities" : [
+        {
+          "nom" : "sharingan",
+          "description" : "un pouvoir mystérieux qui donne à sasuke des abilities surhumaines."
+        },
+        {
+          "nom" : "chidori",
+          "description" : "une technique qui crée une lame de foudre pour attaquer ses ennemis."
+        }
+      ],
+      "image" : "./static/img/sasuke.png"
+    },
+    {
+      "name" : "itachi uchiha",
+      "role" : "antagoniste",
+      "provenance" : "naruto",
+      "origine" : "naruto",
+      "description" : "itachi uchiha est un ancien membre du clan uchiha qui trahit son village pour protéger son frère sasuke. il est déterminé à protéger konoha et à empêcher la guerre.",
+      "equipements" : [
+        {
+          "nom" : "sharingan",
+          "description" : "un pouvoir mystérieux qui donne à itachi des abilities surhumaines."
+        },
+        {
+          "nom" : "tsukuyomi",
+          "description" : "une technique qui crée une illusion pour torturer ses ennemis."
+        }
+      ],
+      "abilities" : [
+        {
+          "nom" : "sharingan",
+          "description" : "un pouvoir mystérieux qui donne à itachi des abilities surhumaines."
+        },
+        {
+          "nom" : "tsukuyomi",
+          "description" : "une technique qui crée une illusion pour torturer ses ennemis."
+        }
+      ],
+      "image" : "./static/img/itachi.png"
+    },
+    {
+      "name" : "kakashi hatake",
+      "role" : "protagoniste",
+      "provenance" : "naruto",
+      "origine" : "naruto",
+      "description" : "kakashi hatake est un ninja du village caché de konoha et est connu pour être un ancien membre de l'équipe 7. il est déterminé à protéger konoha et à former la prochaine génération de ninjas.",
+      "equipements" : [
+        {
+          "nom" : "kunai",
+          "description" : "un couteau de lancer que kakashi utilise pour combattre."
+        },
+        {
+          "nom" : "shuriken",
+          "description" : "une étoile de ninja que kakashi utilise pour combattre."
+        }
+      ],
+      "abilities" : [
+        {
+          "nom" : "sharingan",
+          "description" : "un pouvoir mystérieux qui donne à kakashi des abilities surhumaines."
+        },
+        {
+          "nom" : "raikiri",
+          "description" : "une technique qui crée une lame de foudre pour attaquer ses ennemis."
+        }
+      ],
+      "image" : "./static/img/kakashi.png"
+    },
+    {
+      "name" : "minato namikaze",
+      "role" : "protagoniste",
+      "provenance" : "naruto",
+      "origine" : "naruto",
+      "description" : "minato namikaze est le quatrième hokage du village caché de konoha et est connu pour être le père de naruto. il est déterminé à protéger konoha et à former la prochaine génération de ninjas.",
+      "equipements" : [
+        {
+          "nom" : "kunai",
+          "description" : "un couteau de lancer que minato utilise pour combattre."
+        },
+        {
+          "nom" : "shuriken",
+          "description" : "une étoile de ninja que minato utilise pour combattre."
+        }
+      ],
+      "abilities" : [
+        {
+          "nom" : "hiraishin",
+          "description" : "une technique qui lui permet de se téléporter instantanément."
+        },
+        {
+          "nom" : "rasengan",
+          "description" : "une technique de type tourbillon que minato utilise pour attaquer ses ennemis."
+        }
+      ],
+      "image" : "./static/img/minato.png"
+    },
+    {
+      "name" : "boruto uzumaki",
+      "role" : "protagoniste",
+      "provenance" : "boruto",
+      "origine" : "naruto",
+      "description" : "boruto uzumaki est un ninja du village caché de konoha et est connu pour être le fils de naruto. il est déterminé à devenir un grand ninja comme son père et à protéger konoha.",
+      "equipements" : [
+        {
+          "nom" : "kunai",
+          "description" : "un couteau de lancer que boruto utilise pour combattre."
+        },
+        {
+          "nom" : "shuriken",
+          "description" : "une étoile de ninja que boruto utilise pour combattre."
+        }
+      ],
+      "abilities" : [
+        {
+          "nom" : "rasengan",
+          "description" : "une technique de type tourbillon que boruto utilise pour attaquer ses ennemis."
+        },
+        {
+          "nom" : "vanishing rasengan",
+          "description" : "une technique qui crée un rasengan invisible pour attaquer ses ennemis."
+        }
+      ],
+      "image" : "./static/img/boruto.png"
+    },
+    {
+      "name" : "hashirama senju",
+      "role" : "protagoniste",
+      "provenance" : "naruto",
+      "origine" : "naruto",
+      "description" : "hashirama senju est le premier hokage du village caché de konoha et est connu pour être le fondateur du village. il est déterminé à protéger konoha et à maintenir la paix dans le monde.",
+      "equipements" : [
+        {
+          "nom" : "kunai",
+          "description" : "un couteau de lancer que hashirama utilise pour combattre."
+        },
+        {
+          "nom" : "shuriken",
+          "description" : "une étoile de ninja que hashirama utilise pour combattre."
+        }
+      ],
+      "abilities" : [
+        {
+          "nom" : "wood style",
+          "description" : "une technique qui lui permet de contrôler le bois."
+        },
+        {
+          "nom" : "sage mode",
+          "description" : "une technique qui lui donne des abilities surhumaines."
+        }
+      ],
+      "image" : "./static/img/hashirama.png"
     }
   ]
 }
