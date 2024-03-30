@@ -4,7 +4,12 @@ import * as NotesService from './NotesService.js';
 import * as FavorisService from './FavorisService.js';
 import { addParamsToURL, clearURLParams } from './UrlService.js';
 
+/**
+ * Classe représentant un personnage.
+ * @class
+ */
 export default class Character {
+  
   constructor(name, role, provenance, description, equipements, abilities, image) {
     this.name = name;
     this.role = role;
@@ -16,6 +21,7 @@ export default class Character {
   }
 
   async render() {
+    // Affichage les détails du personnage
     addParamsToURL({ character: this.name });
     document.getElementById('pagination').innerHTML = '';
     const characterDetail = document.getElementById('character-list');

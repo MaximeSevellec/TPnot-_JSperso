@@ -1,6 +1,10 @@
 import { loadCharacters, displayCharacter, initializeApp } from './CharacterService.js';
 
 export function addFav(character) {
+    /**
+     * Ajoute un personnage aux favoris.
+     * @param {string} character - Le personnage à ajouter aux favoris.
+     */
     var fav = JSON.parse(localStorage.getItem('fav')) || [];
     fav.push(character);
     localStorage.setItem('fav', JSON.stringify(fav));
@@ -8,6 +12,10 @@ export function addFav(character) {
 }
 
 export function removeFav(character) {
+    /**
+     * Retire un personnage des favoris.
+     * @param {string} character - Le personnage à retirer des favoris.
+     */
     var fav = JSON.parse(localStorage.getItem('fav')) || [];
     fav = fav.filter(item => item !== character);
     localStorage.setItem('fav', JSON.stringify(fav));
@@ -15,6 +23,9 @@ export function removeFav(character) {
 }
 
 export async function displayFav() {
+    /**
+     * Affiche les personnages favoris.
+     */
     document.getElementById('character-list').classList.remove('character-detail');
     const fav = JSON.parse(localStorage.getItem('fav')) || [];
     document.getElementById('character-list').innerHTML = '';

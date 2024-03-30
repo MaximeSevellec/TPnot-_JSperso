@@ -1,4 +1,9 @@
 export async function getNotesByCharacter(characterName) {
+    /**
+     * Récupère les notes d'un personnage.
+     * @param {string} characterName - Le nom du personnage.
+     * @returns {Promise<number>} La note moyenne du personnage.
+     */
     try {
         const data = await loadNotes();
         const characterNotes = data.character[characterName];
@@ -17,6 +22,10 @@ export async function getNotesByCharacter(characterName) {
 }
 
 export async function noter(characterData) {
+    /**
+     * Permet de noter un personnage.
+     * @param {string} characterData - Les données du personnage.
+     */
     var maNote = prompt("Entrez votre note pour ce personnage");
     if (maNote === null || maNote === "") {
         return;
@@ -49,6 +58,9 @@ export async function noter(characterData) {
 }
 
 async function loadNotes() {
+    /**
+     * Charge les notes depuis le fichier JSON.
+     */
     try {
       const reponse = await fetch('./static/json/notes.json');
       const data = await reponse.json();
@@ -62,6 +74,9 @@ async function loadNotes() {
 }
 
 async function getNotes() {
+    /**
+     * Récupère les notes.
+     */
     const response = await fetch('http://localhost:3000/character');
     if (!response.ok) {
       throw new Error('Erreur de récupération des données.');
