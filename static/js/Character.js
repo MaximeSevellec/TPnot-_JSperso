@@ -22,10 +22,12 @@ export default class Character {
 
   async render() {
     // Affichage les détails du personnage
+    const characterName = this.name;
     addParamsToURL({ character: this.name });
     document.getElementById('pagination').innerHTML = '';
     const characterDetail = document.getElementById('character-list');
     characterDetail.classList.add('character-detail');
+    document.getElementById('search').classList.add('hidden');
     
     characterDetail.innerHTML = `
       <div>
@@ -70,10 +72,10 @@ export default class Character {
     `;
     if (localStorage.getItem('fav') != null && localStorage.getItem('fav').includes(this.name)) {
       document.getElementById('favo').textContent = 'Retirer des favoris';
-      document.getElementById('favo').removeEventListener('click', () => FavorisService.addFav(this.name));
-      document.getElementById('favo').addEventListener('click', () => FavorisService.removeFav(this.name));
+      document.getElementById('favo').onclick = function() { FavorisService.removeFav(characterName); };
     } else {
-      document.getElementById('favo').addEventListener('click', () => FavorisService.addFav(this.name));
+      document.getElementById('favo').textContent = 'Ajouter des favoris';
+      document.getElementById('favo').onclick = function() { FavorisService.addFav(characterName); };
     }
     document.getElementById('retour').addEventListener('click', () => {
       clearURLParams();

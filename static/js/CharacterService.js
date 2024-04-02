@@ -9,6 +9,9 @@ export async function loadCharacters(recherche, start, end) {
      * @param {number} [start] - L'index de départ.
      * @param {number} [end] - L'index de fin.
      */
+    if(recherche === undefined){
+        return [];
+    }
     try {
         const response = await fetch('./static/json/characters.json');
         const data = await response.json();
@@ -57,7 +60,7 @@ export async function displayCharacter(character) {
     addLazyLoad(imgElement);
 }
 
-function addLazyLoad(img){
+function addLazyLoad(img) {
     /**
      * Permet de charger les images en lazy loading.
      * @param {HTMLImageElement} img - L'image à charger en lazy loading.
@@ -65,16 +68,18 @@ function addLazyLoad(img){
     const lazyImageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-            const lazyImage = entry.target;
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.removeAttribute('data-src');
-            observer.unobserve(lazyImage);
+                const lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.removeAttribute('data-src');
+                console.log('lazyImageObserver', lazyImage.src);
+                observer.unobserve(lazyImage);
             }
         });
-    });
+    }, { rootMargin: '0px 0px 50px 0px' });
 
     lazyImageObserver.observe(img);
 }
+
 
 
 export async function displayCharactersByPage(recherche) {
@@ -98,6 +103,7 @@ export async function initializeApp() {
     const characters = await loadCharacters("");
     document.getElementById('character-list').innerHTML = '';
     document.getElementById('character-list').classList.remove('character-detail');
+    document.getElementById('search').classList.remove('hidden');
     var nbPages = Math.ceil(characters.length / getCharactersPerPage());
     document.getElementById('pagination').innerHTML = '';
     for (let i = 1; i <= nbPages; i++) {

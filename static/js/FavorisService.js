@@ -8,7 +8,10 @@ export function addFav(character) {
     var fav = JSON.parse(localStorage.getItem('fav')) || [];
     fav.push(character);
     localStorage.setItem('fav', JSON.stringify(fav));
-    alert("Personnage ajouté aux favoris");
+    document.getElementById('favo').textContent = 'Retirer des favoris';
+    document.getElementById('favo').onclick = function() { removeFav(character); };
+
+    console.log('bonjour');
 }
 
 export function removeFav(character) {
@@ -19,14 +22,17 @@ export function removeFav(character) {
     var fav = JSON.parse(localStorage.getItem('fav')) || [];
     fav = fav.filter(item => item !== character);
     localStorage.setItem('fav', JSON.stringify(fav));
-    alert("Personnage retiré des favoris");
+    document.getElementById('favo').textContent = 'Ajouter aux favoris';
+    document.getElementById('favo').onclick = function() { addFav(character); };
 }
+
 
 export async function displayFav() {
     /**
      * Affiche les personnages favoris.
      */
     document.getElementById('character-list').classList.remove('character-detail');
+    document.getElementById('search').classList.remove('hidden');
     const fav = JSON.parse(localStorage.getItem('fav')) || [];
     document.getElementById('character-list').innerHTML = '';
     document.getElementById('pagination').innerHTML = '';
@@ -37,8 +43,10 @@ export async function displayFav() {
     }
     else {
         fav.forEach(async function (character) {
+            if(character !== '') {
         const characters = await loadCharacters(character);
         characters.forEach(displayCharacter);
+            }
         });
     }
     const retour = document.createElement('button');
